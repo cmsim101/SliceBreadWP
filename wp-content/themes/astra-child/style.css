@@ -11,3 +11,61 @@
 
 /* Import parent theme styles */
 @import url("../astra/style.css");
+
+.custom-product-accordion {
+    margin-top: 30px;
+}
+
+.custom-product-accordion h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.accordionTab {
+    margin-bottom: 10px;
+}
+
+.accordion {
+    background-color: #045cb4;
+    cursor: pointer;
+    padding: 14px;
+    width: 100%;
+    border: 1px solid #045cb4;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    transition: 0.4s;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.accordion.active, .accordion:hover {
+    background-color: #ffffff;
+    border: 1px solid #045cb4;
+    color: #045cb4;
+}
+
+.panel {
+    display: none;
+    padding: 0 14px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    margin-bottom: 10px;
+}
+
+.panel p,
+.panel ul li a {
+    margin: 0;
+    padding: 10px 0;
+    color: #333;
+}
+
+.accordion.active + .panel {
+    display: block;
+    max-height: 200px; /* Adjust as needed */
+}
