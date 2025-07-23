@@ -1,0 +1,13 @@
+/*
+ Theme Name:   Astra Child
+ Theme URI:    https://example.com/astra-child
+ Description:  Astra Child Theme
+ Author:       Your Name
+ Author URI:   https://example.com
+ Template:     astra
+ Version:      1.0.0
+ Text Domain:  astra-child
+*/
+
+/* Import parent theme styles */
+@import url("../astra/style.css");
