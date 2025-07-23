@@ -12,6 +12,7 @@
 /* Import parent theme styles */
 @import url("../astra/style.css");
 
+/* PRODUCT PAGE - ADDITIONAL TABS */
 .custom-product-accordion {
     margin-top: 30px;
 }
@@ -48,7 +49,7 @@
     color: #045cb4;
 }
 
-.panel {
+.panelContent {
     display: none;
     padding: 0 14px;
     background-color: white;
@@ -58,14 +59,137 @@
     margin-bottom: 10px;
 }
 
-.panel p,
-.panel ul li a {
+.panelContent p,
+.panelContent ul li a {
     margin: 0;
     padding: 10px 0;
     color: #333;
 }
 
-.accordion.active + .panel {
+.accordion.active + .panelContent {
     display: block;
-    max-height: 200px; /* Adjust as needed */
+    max-height: 200px;
 }
+
+#openQuoteModal {
+    background-color: #fff !important;
+    color: #045cb4 !important;
+    border: 1px solid #045cb4 !important;
+}
+
+#openQuoteModal:hover,
+#openQuoteModal:focus,
+#openQuoteModal:active {
+    background-color: #045cb4 !important;
+    color: #fff !important;
+}
+
+/* PRODUCT PAGE - FORM */
+
+#quoteModal {
+    max-height: none !important;
+}
+
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+.modal-content {
+    background: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    max-width: 500px;
+    border-radius: 4px;
+}
+.close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* PRODUCT PAGE - BELOW THE FOLD */
+
+.below-fold-wrapper {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background: #f9f9f9;
+    padding: 30px 20px;
+    box-sizing: border-box;
+}
+
+.below-fold-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.below-fold-btn {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.below-fold-btn a {
+    background-color: #fff !important;
+    color: #045cb4 !important;
+    border: 1px solid #045cb4 !important;
+}
+
+.below-fold-btn a:hover,
+.below-fold-btn a:focus,
+.below-fold-btn a:active {
+    background-color: #045cb4 !important;
+    color: #fff !important;
+}
+
+.below-fold-text,
+.below-fold-image {
+    flex: 1 1 50%;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.bottomImage {
+    margin-top: 10px;
+}
+
+.below-fold-heading {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.below-fold-content p {
+    margin-bottom: 0;
+}
+
+.below-fold-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Responsive: Stack on small screens */
+@media screen and (max-width: 768px) {
+    .below-fold-section {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .below-fold-text,
+    .below-fold-image {
+        flex: 1 1 100%;
+        padding: 10px;
+    }
+}
+
