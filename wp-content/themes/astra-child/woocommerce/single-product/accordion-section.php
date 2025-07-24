@@ -15,7 +15,10 @@ $fields = [
         $field = get_field_object( $field_name );
         if ( ! empty( $field['value'] ) ) : ?>
             <div class="accordionTab">
-                <button class="accordion"><?php echo esc_html( $field['label'] ); ?></button>
+                <button class="accordion">
+                    <?php echo esc_html( $field['label'] ); ?>
+                    <span class="accordion-icon">+</span>
+                </button>
                 <div class="panelContent"><?php echo wp_kses_post( $field['value'] ); ?></div>
             </div>
         <?php endif;
@@ -33,18 +36,25 @@ $fields = [
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const accordions = document.querySelectorAll(".accordion");
+
         accordions.forEach(function(btn) {
             btn.addEventListener("click", function() {
                 this.classList.toggle("active");
                 const panel = this.nextElementSibling;
-                if (panel.style.maxHeight) {
+                const icon = this.querySelector(".accordion-icon");
+
+                // Toggle panel visibility
+                if (panel && panel.style.maxHeight) {
                     panel.style.maxHeight = null;
-                } else {
+                    if (icon) icon.textContent = "+";
+                } else if (panel) {
                     panel.style.maxHeight = panel.scrollHeight + "px";
+                    if (icon) icon.textContent = "−";
                 }
             });
         });
 
+        // Modal logic
         const modal = document.getElementById('quoteModal');
         const openBtn = document.getElementById('openQuoteModal');
         const closeBtn = document.getElementById('closeQuoteModal');
@@ -57,4 +67,5 @@ $fields = [
             });
         }
     });
+
 </script>

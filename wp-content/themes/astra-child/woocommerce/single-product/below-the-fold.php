@@ -8,7 +8,7 @@ $image2   = get_field('below_image_2');
 $btnText   = get_field('below_button_text');
 $btnLink   = get_field('below_button_link');
 
-if ( $title || $content || $image1 ) : ?>
+if ( $title || $content || $image1 || $image2 ) : ?>
     <div class="below-fold-wrapper">
         <div class="below-fold-section">
             <div class="below-fold-text">
@@ -27,7 +27,7 @@ if ( $title || $content || $image1 ) : ?>
                 <?php endif; ?>
             </div>
 
-            <?php if ( $image1 ) : ?>
+            <?php if ( $image1 || $image2 ) : ?>
                 <div class="below-fold-image">
                     <img class="topImage" src="<?php echo esc_url( $image1['url'] ); ?>" alt="<?php echo esc_attr( $image1['alt'] ); ?>">
                     <img class="bottomImage" src="<?php echo esc_url( $image2['url'] ); ?>" alt="<?php echo esc_attr( $image2['alt'] ); ?>">
